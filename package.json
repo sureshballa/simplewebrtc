@@ -1,0 +1,29 @@
+{
+  "name": "simplewebrtc",
+  "version": "1.0.0",
+  "description": "Simple WebRTC demo with nodejs based signaling server",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sureshballa/simplewebrtc.git"
+  },
+  "keywords": [
+    "webrtc"
+  ],
+  "author": "Suresh Balla",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sureshballa/simplewebrtc/issues"
+  },
+  "homepage": "https://github.com/sureshballa/simplewebrtc#readme",
+  "dependencies": {
+    "asynquence": "^0.6.0-b",
+    "asynquence-contrib": "0.9.0-a",
+    "node-static": "0.7.6",
+    "socket.io": "1.3.5"
+  }
+}
