@@ -5,7 +5,7 @@ function handleHTTP(req,res) {
 	res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, GET');
 	res.setHeader('Access-Control-Allow-Headers', '*');
 	if (req.method == "GET") {
-		console.log(req.url);
+		//console.log(req.url);
 		if (req.url == "/WebRTC.html") {
 			req.addListener("end",function(){
 				static_files.serve(req,res);
@@ -101,13 +101,18 @@ var
 	httpserv = http.createServer(handleHTTP),
 
 	port = 8006,
-	host = "127.0.0.1",
+	host = "192.168.1.111",
+	// host = "localhost",
 
 	ASQ = require("asynquence"),
 	node_static = require("node-static"),
 	static_files = new node_static.Server(__dirname),
 
-	io = require("socket.io").listen(httpserv, {origins:'localhost:* http://localhost:8006'}),
+	io = require("socket.io")({"transports": [
+		"websocket",
+		"xhr-polling",
+		"jsonp-polling"
+		]}).listen(httpserv, {origins:'localhost:* http://localhost:8006'}),
 
 	channels = []
 ;

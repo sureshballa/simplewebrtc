@@ -188,7 +188,8 @@ var remoteSDPReceived;
 
 var socket, caller = false, steps;
 
-socket = io.connect("localhost:8006/rtc",{
+socket = io.connect("192.168.1.111:8006/rtc",{
+// socket = io.connect("localhost:8006/rtc",{
 	"connect timeout": 3000,
 	"reconnect": false
 });
